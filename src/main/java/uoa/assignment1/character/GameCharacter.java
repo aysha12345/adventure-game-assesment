@@ -4,7 +4,7 @@ public abstract class GameCharacter {
     
 	private String name ="";
 	
-	private int health; 
+	private int health = 100; 
 	
 	public int row;
 	public int column;
@@ -25,10 +25,11 @@ public abstract class GameCharacter {
 	}
 
 	public int getHealth() {
-		return -1;
+		return health;
 	}
 
 	public void setHealth(int health) {
+        this.health = health
 		//complete
 	}
 }
