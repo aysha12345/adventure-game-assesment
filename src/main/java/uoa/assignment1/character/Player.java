@@ -13,7 +13,7 @@ public class Player extends GameCharacter{
 	
 	public
 	void hurtCharacter(GameCharacter character) {
-        if (Player.successfulDefense() == false) {
+        if (character.successfulDefense() == false) {
             character.setHealth(character.getHealth() - 50);
         }
 		
@@ -23,7 +23,7 @@ public class Player extends GameCharacter{
 	public
 	boolean successfulDefense() {
         int chance = rand.nextInt(10);
-        if (chance <= 3) {
+        if (chance <= 2) {
             return true;
         } else {
             return false;
