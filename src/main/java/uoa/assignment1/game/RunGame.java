@@ -1,5 +1,6 @@
 package uoa.assignment1.game;
 
+
 public class RunGame {
 
 	private static boolean gameOver = false;
