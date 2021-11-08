@@ -1,19 +1,23 @@
 package uoa.assignment1.game;
 
-import uoa.assignment1.game.Game;
+import java.util.Scanner;
 
 public class RunGame {
 
 	private static boolean gameOver = false;
-    public Game game;
 
 	public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         int height = Integer.parseInt(args[0]);
         int width = Integer.parseInt(args[1]);
         Game game = new Game(height, width);
         game.getMap();
+        int round = 0;
 		
         while (!gameOver) {
+            System.out.println("Round " + round);
+            round++;
+            String nextInput = input.nextLine();
 			//complete the code
 		}
 	}
