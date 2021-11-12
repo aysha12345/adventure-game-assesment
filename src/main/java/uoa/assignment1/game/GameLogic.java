@@ -40,8 +40,18 @@ public class GameLogic {
             System.out.println("You can't go up. You lose a move.");
         }
         else {
-            character.row -= 1;
-            gameMap.getArray();           
+            gameMap.getArray();
+            //code to prevent NullPointerException from: https://en.wikibooks.org/wiki/Java_Programming/Preventing_NullPointerException#:~:text=NullPointerException%20is%20a%20RuntimeException%20.,referred%20by%20a%20null%20reference.
+            if ("%".equals(gameMap.layout[character.row][character.column]) && "%".equals(gameMap.layout[character.row - 1][character.column])) {
+                System.out.println("Monster already there so can't move");
+            }
+            else {
+                if ("*".equals(gameMap.layout[character.row][character.column]) && "%".equals(gameMap.layout[character.row - 1][character.column])) {
+                    character.hurtCharacter(gameMap.characters[]);
+                }
+                character.row -= 1;
+                gameMap.getArray(); 
+            }          
         }
     }       
      
@@ -50,8 +60,14 @@ public class GameLogic {
             System.out.println("You can't go down. You lose a move.");
         }
         else {
-            character.row += 1;
             gameMap.getArray();
+            if ("%".equals(gameMap.layout[character.row][character.column]) && "%".equals(gameMap.layout[character.row + 1][character.column])) {
+                System.out.println("Monster already there so can't move");
+            }
+            else {
+                character.row += 1;
+                gameMap.getArray();
+            }
         }
     }                      
     
@@ -60,8 +76,14 @@ public class GameLogic {
              System.out.println("You can't go right. You lose a move.");
          }
          else {
-             character.column += 1;
-             gameMap.getArray(); 
+             gameMap.getArray();
+             if ("%".equals(gameMap.layout[character.row][character.column]) && "%".equals(gameMap.layout[character.row][character.column + 1])) {
+                 System.out.println("Monster already there so can't move");
+             }
+             else {
+                 character.column += 1;
+                 gameMap.getArray(); 
+             }
          }
      }                           
    
@@ -70,8 +92,14 @@ public class GameLogic {
             System.out.println("You can't go left. You lose a move.");
         }
         else {
-            character.column -= 1;
             gameMap.getArray();
+            if ("%".equals(gameMap.layout[character.row][character.column]) && "%".equals(gameMap.layout[character.row][character.column - 1])) {
+                System.out.println("Monster already there so can't move");
+            }
+            else {
+                character.column -= 1;
+                gameMap.getArray();
+            }
         }
     }
 }
