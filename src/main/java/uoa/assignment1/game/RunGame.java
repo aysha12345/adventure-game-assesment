@@ -2,7 +2,7 @@ package uoa.assignment1.game;
 
 import java.util.Scanner;
 
-public class RunGame {
+public class RunGame {   
 
 	private static boolean gameOver = false;
 
@@ -18,8 +18,9 @@ public class RunGame {
             System.out.println("Round " + round);
             round++;
             String nextInput = input.nextLine();
+            game.nextRound(nextInput);
+
 			//complete the code
 		}
 	}
-
 }

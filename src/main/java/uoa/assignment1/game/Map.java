@@ -12,14 +12,14 @@ public class Map {
         layout = new String[height][width];
         characters = new GameCharacter[4];
         Player player = new Player("name");
-        player.column = width -1;
-        player.row = height -1 ;
+        player.column = width - 1;
+        player.row = height - 1 ;
         Monster monster1 = new Monster("name");
-        monster1.column = width -1;
+        monster1.column = width - 1;
         monster1.row = 0;
         Monster monster2 = new Monster("name");
         monster2.column = 0;
-        monster2.row = height -1;
+        monster2.row = height - 1;
         Monster monster3 = new Monster("name");
         monster3.row = 0;
         monster3.column = 0;
@@ -41,10 +41,14 @@ public class Map {
         layout[characters[2].row][characters[2].column] = "%";
         layout[characters[3].row][characters[3].column] = "%";
     }
- 
+    
+    public void getArray() {
+            initialiseArray();
+    } 
+    
     //code to print array adapted from: https://www.codegrepper.com/code-examples/java/how+to+print++a+2d+array+in+java
     public void printLayout() {
-        initialiseArray();
+        getArray();
         for (int height = 0; height < layout.length; height ++) {
             for (int width = 0; width < layout[height].length; width++) {
                 System.out.print(layout[height][width]);
